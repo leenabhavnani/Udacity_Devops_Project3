@@ -5,6 +5,7 @@
     name: "tar"
     state: latest
     update_cache: yes
+    
 
 - name: Copy backend dist files to remote server
   copy:

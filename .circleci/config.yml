@@ -220,8 +220,10 @@ workflows:
       #    requires: [build-backend]
      # - scan-frontend:
      #     requires: [build-frontend]
-      - deploy-infrastructure
-      #    requires:
+      - deploy-infrastructure:
+          requires:
+             - build-frontend
+             - build-backend
       #      - scan-frontend
        #     - scan-backend
       - configure-infrastructure:
