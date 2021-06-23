@@ -235,7 +235,7 @@ jobs:
             cd backend 
             npm install
             npm run build
-            
+            cat .env
             echo 'DB MIGRATIONS process started' 
             echo 'DB MIGRATIONS process started' > migrations_result.txt
             npm run migrations >> migrations_result.txt
