@@ -85,8 +85,8 @@ jobs:
           command: |
             ls -ltr
             cd frontend
-           # npm install jest
-           # npm run test
+            npm install jest
+            npm run test
                 
   test-backend:
     docker:
@@ -100,8 +100,8 @@ jobs:
           command: |
             ls -ltr
             cd backend
-           # npm install jest-junit
-           # npm run test -- --reporters=default --reporters=jest-junit
+            npm install jest-junit
+            npm run test -- --reporters=default --reporters=jest-junit
           environment:
             JEST_JUNIT_OUTPUT_DIR: /tmp/reports/junit/
       - store_test_results:
@@ -216,7 +216,7 @@ jobs:
           no_output_timeout: 30m
           command: |
             cd .circleci/ansible/
-       #ansible-playbook -i inventory.txt configure-server.yml
+            ansible-playbook -i inventory.txt configure-server.yml
       # Here's where you will add some code to rollback on failure     
 
   run-migrations:
