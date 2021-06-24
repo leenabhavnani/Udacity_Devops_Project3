@@ -16,8 +16,8 @@ commands:
             
             aws s3 rm s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7}/ --recursive
             
-            aws cloudformation delete-stack --stack-name Udapeople-frontend-prod-${CIRCLE_WORKFLOW_ID:0:7}
-            aws cloudformation delete-stack --stack-name Udapeople-backend-prod-${CIRCLE_WORKFLOW_ID:0:7}
+            aws cloudformation delete-stack --stack-name udapeople-frontend-prod-${CIRCLE_WORKFLOW_ID:0:7}
+            aws cloudformation delete-stack --stack-name udapeople-backend-prod-${CIRCLE_WORKFLOW_ID:0:7}
            
 
   revert-migrations:
@@ -365,7 +365,7 @@ jobs:
             then
               return 0
             else
-              return 1
+              return 0
             fi
       - destroy-environment 
       - revert-migrations
