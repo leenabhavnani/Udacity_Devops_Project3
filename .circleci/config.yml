@@ -387,7 +387,7 @@ jobs:
             list-exports --query "Exports[?Name==\`WorkflowID\`].Value" \
             --region us-east-2 --no-paginate --output text >> ./.circleci/oldworkflowid.txt
             
-            aws cloudformation update-stack --use-previous-template --stack-name udapeople-cloudfront --parameters ParameterKey=WorkflowID,ParameterValue=${CIRCLE_WORKFLOW_ID:0:7},UsePreviousValue=false 
+            aws cloudformation update-stack --use-previous-template --stack-name cloudfrontstack --parameters ParameterKey=WorkflowID,ParameterValue=${CIRCLE_WORKFLOW_ID:0:7},UsePreviousValue=false 
 
       # Here's where you will add some code to rollback on failure 
    
